@@ -8,131 +8,135 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Arimo:wght@400;500;600&display=swap" rel="stylesheet" />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              orange: { DEFAULT: '#E87722', dark: '#C45F0A', light: '#FDE8D0', pale: '#FEF4EA' },
-              dark: { DEFAULT: '#1A1206', 2: '#2D2010' },
-              mid: '#6B5B45',
-              cream: '#F7F2EC',
-              bdr: '#E8DDD0',
+              orange:  { DEFAULT: '#CB6015', dark: '#A34C0F', light: '#F2D5BC', pale: '#FAF0E6' },
+              blue:    { DEFAULT: '#002F6C', light: '#B9D9EB', pale: '#E8F3F9' },
+              steel:   '#333F48',
+              silver:  '#C1C6C8',
+              warmgray:'#B6ADA5',
+              bdr:     '#DDD8D2',
+              cream:   '#F8F6F3',
             },
             fontFamily: {
-              display: ['Barlow Condensed', 'sans-serif'],
-              body: ['DM Sans', 'sans-serif'],
+              sans:  ['Arimo', 'Arial', 'sans-serif'],
+              serif: ['EB Garamond', 'Garamond', 'serif'],
             },
           }
         }
       }
     </script>
     <style>
-      body { font-family: 'DM Sans', sans-serif; background: #F7F2EC; color: #1A1206; }
+      body { font-family: 'Arimo', Arial, sans-serif; background: #F8F6F3; color: #333F48; }
       .hero-bg {
-        background-color: #1A1206;
+        background-color: #002F6C;
         background-image:
-          radial-gradient(ellipse 80% 60% at 60% 40%, rgba(232,119,34,0.18) 0%, transparent 70%),
-          repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(232,119,34,0.04) 39px, rgba(232,119,34,0.04) 40px),
-          repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(232,119,34,0.04) 39px, rgba(232,119,34,0.04) 40px);
+          radial-gradient(ellipse 70% 60% at 65% 40%, rgba(203,96,21,0.15) 0%, transparent 65%),
+          repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(185,217,235,0.04) 39px, rgba(185,217,235,0.04) 40px),
+          repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(185,217,235,0.04) 39px, rgba(185,217,235,0.04) 40px);
       }
-      .display { font-family: 'Barlow Condensed', sans-serif; }
-      .video-thumb { position: relative; aspect-ratio: 16/9; background: #2D2010; border-radius: 12px 12px 0 0; overflow: hidden; cursor: pointer; }
+      .serif { font-family: 'EB Garamond', Garamond, serif; }
+      .video-thumb { position: relative; aspect-ratio: 16/9; background: #002F6C; border-radius: 8px 8px 0 0; overflow: hidden; cursor: pointer; }
       .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
       .video-thumb:hover img { transform: scale(1.04); }
-      .play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(26,18,6,0.35); transition: background 0.2s; }
-      .video-thumb:hover .play-btn { background: rgba(26,18,6,0.15); }
-      .play-circle { width: 52px; height: 52px; border-radius: 50%; background: #E87722; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+      .play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,47,108,0.4); transition: background 0.2s; }
+      .video-thumb:hover .play-btn { background: rgba(0,47,108,0.2); }
+      .play-circle { width: 52px; height: 52px; border-radius: 50%; background: #CB6015; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
       .video-thumb:hover .play-circle { transform: scale(1.1); }
-      .step-num { width: 40px; height: 40px; border-radius: 50%; background: #E87722; color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-      .prize-card { background: white; border: 1px solid #E8DDD0; border-radius: 16px; text-align: center; padding: 1.5rem 1rem; }
-      .prize-amount { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 800; color: #E87722; line-height: 1; }
+      .step-num { width: 40px; height: 40px; border-radius: 50%; background: #CB6015; color: white; font-family: 'Arimo', sans-serif; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+      .prize-card { background: white; border: 1px solid #DDD8D2; border-radius: 12px; text-align: center; padding: 1.5rem 1rem; }
+      .prize-amount { font-family: 'EB Garamond', Garamond, serif; font-size: 56px; font-weight: 700; color: #CB6015; line-height: 1; }
+      .prize-card--first { border-top: 4px solid #CB6015; }
       .fade-in { animation: fadeUp 0.6s ease both; }
       @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
       .delay-1 { animation-delay: 0.1s; }
       .delay-2 { animation-delay: 0.2s; }
       .delay-3 { animation-delay: 0.3s; }
       .delay-4 { animation-delay: 0.4s; }
-      .etx-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(232,119,34,0.15); color: #C45F0A; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.04em; text-transform: uppercase; }
-      .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #E87722; color: white; font-weight: 600; font-size: 16px; padding: 14px 32px; border-radius: 10px; text-decoration: none; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-      .cta-btn:hover { background: #C45F0A; transform: translateY(-1px); }
-      .cta-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; font-weight: 500; font-size: 15px; padding: 13px 28px; border-radius: 10px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3); cursor: pointer; transition: border-color 0.2s, background 0.2s; font-family: 'DM Sans', sans-serif; }
-      .cta-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.07); }
-      .nav-link { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+      .ut-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(203,96,21,0.18); color: #F2D5BC; font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(203,96,21,0.35); }
+      .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #CB6015; color: white; font-weight: 600; font-size: 15px; padding: 13px 28px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; font-family: 'Arimo', sans-serif; }
+      .cta-btn:hover { background: #A34C0F; transform: translateY(-1px); }
+      .cta-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; font-weight: 500; font-size: 15px; padding: 12px 24px; border-radius: 8px; text-decoration: none; border: 1.5px solid rgba(185,217,235,0.4); cursor: pointer; transition: border-color 0.2s, background 0.2s; font-family: 'Arimo', sans-serif; }
+      .cta-outline:hover { border-color: rgba(185,217,235,0.8); background: rgba(185,217,235,0.08); }
+      .nav-link { font-size: 14px; font-weight: 500; color: rgba(185,217,235,0.85); text-decoration: none; transition: color 0.2s; }
       .nav-link:hover { color: white; }
-      .sec-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #E87722; margin-bottom: 8px; display: block; }
+      .sec-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #CB6015; margin-bottom: 6px; display: block; }
       .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 999; align-items: center; justify-content: center; padding: 1rem; }
       .modal-overlay.open { display: flex; }
-      .modal-inner { background: #1A1206; border-radius: 16px; width: 100%; max-width: 820px; overflow: hidden; position: relative; }
+      .modal-inner { background: #002F6C; border-radius: 12px; width: 100%; max-width: 820px; overflow: hidden; position: relative; border: 2px solid #CB6015; }
       .modal-close { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.1); border: none; color: white; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; }
-      .modal-close:hover { background: rgba(255,255,255,0.2); }
+      .modal-close:hover { background: rgba(203,96,21,0.5); }
+      .divider { width: 1px; background: rgba(185,217,235,0.15); align-self: stretch; }
     </style>
   </head>
   <body>
 
     <!-- NAV -->
-    <nav class="hero-bg border-b" style="border-color: rgba(232,119,34,0.2)">
+    <nav class="hero-bg" style="border-bottom: 1px solid rgba(185,217,235,0.15)">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#E87722">
-            <span class="display text-white text-sm font-bold tracking-wide">ETX</span>
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#CB6015">
+            <span class="text-white text-xs font-bold tracking-wide" style="font-family:'Arimo',sans-serif">UTT</span>
           </div>
           <div>
             <p class="text-white font-semibold text-sm leading-tight">ETX Launchpad</p>
-            <p class="text-xs" style="color:rgba(255,255,255,0.4)">University of Texas at Tyler</p>
+            <p class="text-xs" style="color:rgba(185,217,235,0.7)">University of Texas at Tyler</p>
           </div>
         </div>
         <div class="hidden sm:flex items-center gap-6">
           <a href="#about" class="nav-link">About</a>
           <a href="#pitches" class="nav-link">Pitches</a>
           <a href="#prizes" class="nav-link">Prizes</a>
-          <a href="./vote.html" class="cta-btn" style="padding:8px 20px;font-size:14px">Vote now &rarr;</a>
+          <a href="./vote.html" class="cta-btn" style="padding:8px 18px;font-size:13px">Vote now &rarr;</a>
         </div>
-        <a href="./vote.html" class="sm:hidden cta-btn" style="padding:8px 16px;font-size:13px">Vote &rarr;</a>
+        <a href="./vote.html" class="sm:hidden cta-btn" style="padding:8px 14px;font-size:13px">Vote &rarr;</a>
       </div>
     </nav>
 
     <!-- HERO -->
-    <section class="hero-bg flex items-center pt-8 pb-20 sm:pb-28">
+    <section class="hero-bg flex items-center pt-10 pb-24 sm:pb-32">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div class="max-w-3xl">
-          <div class="etx-tag fade-in mb-6">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="ut-tag fade-in mb-6">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             Fall 2026 &middot; Voting open now
           </div>
-          <h1 class="display text-white font-extrabold leading-none mb-6 fade-in delay-1" style="font-size:clamp(56px,10vw,96px);letter-spacing:-0.01em">
-            BIG IDEA<br><span style="color:#E87722">PITCH.</span>
+          <h1 class="serif text-white font-bold leading-none mb-6 fade-in delay-1" style="font-size:clamp(52px,9vw,90px);letter-spacing:-0.02em">
+            Big Idea<br><span style="color:#CB6015">Pitch.</span>
           </h1>
-          <p class="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl fade-in delay-2" style="color:rgba(255,255,255,0.7)">
-            UT Tyler students had 60 seconds to pitch their best idea. Watch the videos, score the pitches, and help decide who wins up to $100.
+          <p class="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl fade-in delay-2" style="color:rgba(185,217,235,0.85)">
+            UT Tyler students had 60 seconds to pitch their best idea. Watch the videos, score the pitches, and help decide who wins up to $150.
           </p>
           <div class="flex flex-wrap gap-4 fade-in delay-3">
-            <a href="./vote.html" class="cta-btn">
+            <a href="./vote.html" class="cta-btn" style="font-size:16px;padding:14px 32px">
               Cast your vote
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <a href="#pitches" class="cta-outline">Watch pitches</a>
           </div>
-          <div class="flex flex-wrap gap-6 mt-12 fade-in delay-4">
+          <div class="flex flex-wrap gap-6 mt-14 fade-in delay-4">
             <div>
-              <p class="display font-bold text-4xl" style="color:#E87722">60</p>
-              <p class="text-sm" style="color:rgba(255,255,255,0.45)">seconds per pitch</p>
+              <p class="serif font-bold text-4xl" style="color:#CB6015">60</p>
+              <p class="text-sm" style="color:rgba(185,217,235,0.6)">seconds per pitch</p>
             </div>
-            <div class="self-stretch" style="width:1px;background:rgba(255,255,255,0.1)"></div>
+            <div class="divider"></div>
             <div>
-              <p class="display font-bold text-4xl" style="color:#E87722" id="pitch-count">&mdash;</p>
-              <p class="text-sm" style="color:rgba(255,255,255,0.45)">ideas submitted</p>
+              <p class="serif font-bold text-4xl" style="color:#CB6015" id="pitch-count">&mdash;</p>
+              <p class="text-sm" style="color:rgba(185,217,235,0.6)">ideas submitted</p>
             </div>
-            <div class="self-stretch" style="width:1px;background:rgba(255,255,255,0.1)"></div>
+            <div class="divider"></div>
             <div>
-              <p class="display font-bold text-4xl" style="color:#E87722">$175</p>
-              <p class="text-sm" style="color:rgba(255,255,255,0.45)">total prizes</p>
+              <p class="serif font-bold text-4xl" style="color:#CB6015">$325</p>
+              <p class="text-sm" style="color:rgba(185,217,235,0.6)">total prizes</p>
             </div>
-            <div class="self-stretch" style="width:1px;background:rgba(255,255,255,0.1)"></div>
+            <div class="divider"></div>
             <div>
-              <p class="display font-bold text-4xl" style="color:#E87722" id="days-left">&mdash;</p>
-              <p class="text-sm" style="color:rgba(255,255,255,0.45)">days to vote</p>
+              <p class="serif font-bold text-4xl" style="color:#CB6015" id="days-left">&mdash;</p>
+              <p class="text-sm" style="color:rgba(185,217,235,0.6)">days to vote</p>
             </div>
           </div>
         </div>
@@ -143,98 +147,98 @@
     <section id="about" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <span class="sec-tag">How it works</span>
-        <h2 class="display font-bold text-dark mb-12" style="font-size:clamp(32px,5vw,52px);letter-spacing:-0.01em">Simple. Fast. Your call.</h2>
-        <div class="grid sm:grid-cols-3 gap-8">
+        <h2 class="serif font-bold text-blue mb-12" style="font-size:clamp(30px,5vw,48px);letter-spacing:-0.01em">Simple. Fast. Your call.</h2>
+        <div class="grid sm:grid-cols-3 gap-10">
           <div class="flex flex-col gap-4">
             <div class="step-num">1</div>
-            <h3 class="font-semibold text-lg text-dark">Watch the pitch</h3>
-            <p class="leading-relaxed" style="color:#6B5B45">Each student had exactly 60 seconds to answer three questions: What is the problem? What already exists? Why is their solution better?</p>
+            <h3 class="font-semibold text-lg text-blue">Watch the pitch</h3>
+            <p class="leading-relaxed text-sm" style="color:#6B6560">Each student had exactly 60 seconds to answer three questions: What is the problem? What already exists? Why is their solution better?</p>
           </div>
           <div class="flex flex-col gap-4">
             <div class="step-num">2</div>
-            <h3 class="font-semibold text-lg text-dark">Score it honestly</h3>
-            <p class="leading-relaxed" style="color:#6B5B45">Rate each pitch on four plain-English questions using a 1&ndash;5 scale. Think like a real customer, not a judge. Your gut reaction is what matters.</p>
+            <h3 class="font-semibold text-lg text-blue">Score it honestly</h3>
+            <p class="leading-relaxed text-sm" style="color:#6B6560">Rate each pitch on four plain-English questions using a 1&ndash;5 scale. Think like a real customer, not a judge. Your gut reaction is what matters.</p>
           </div>
           <div class="flex flex-col gap-4">
             <div class="step-num">3</div>
-            <h3 class="font-semibold text-lg text-dark">Winners announced</h3>
-            <p class="leading-relaxed" style="color:#6B5B45">Voting closes October 26. The top three scores win cash prizes. Winners are announced at a celebration event the week of November 3.</p>
+            <h3 class="font-semibold text-lg text-blue">Winners announced</h3>
+            <p class="leading-relaxed text-sm" style="color:#6B6560">Voting closes October 26. The top three scores win cash prizes. Winners are announced at a celebration event the week of November 3.</p>
           </div>
         </div>
-        <div class="mt-12 p-6 rounded-2xl" style="background:#FEF4EA;border:1px solid #FDE8D0">
-          <p class="text-sm leading-relaxed" style="color:#6B5B45">
-            <strong class="text-dark">Who can vote?</strong> Any UT Tyler student, faculty, or staff with a university Google account. One vote per pitch per person. Sign in with your UT Tyler email to participate.
+        <div class="mt-12 p-5 rounded-xl" style="background:#E8F3F9;border:1px solid #B9D9EB;border-left:4px solid #002F6C">
+          <p class="text-sm leading-relaxed" style="color:#333F48">
+            <strong class="text-blue">Who can vote?</strong> Any UT Tyler student, faculty, or staff with a university Google account. One vote per pitch per person. Sign in with your uttyler.edu or patriots.uttyler.edu email to participate.
           </p>
         </div>
       </div>
     </section>
 
     <!-- FEATURED PITCHES -->
-    <section id="pitches" class="py-20" style="background:#F7F2EC">
+    <section id="pitches" class="py-20" style="background:#F8F6F3">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
           <div>
             <span class="sec-tag">Featured pitches</span>
-            <h2 class="display font-bold text-dark" style="font-size:clamp(32px,5vw,52px);letter-spacing:-0.01em">Watch &amp; vote</h2>
+            <h2 class="serif font-bold text-blue" style="font-size:clamp(30px,5vw,48px);letter-spacing:-0.01em">Watch &amp; vote</h2>
           </div>
           <a href="./vote.html" class="cta-btn">View all &rarr;</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
           <!-- Replace VIDEO_ID_N and student details with real data -->
-          <div class="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #E8DDD0">
+          <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #DDD8D2">
             <div class="video-thumb" onclick="openVideo('VIDEO_ID_1','Student Name 1')">
-              <img src="https://img.youtube.com/vi/VIDEO_ID_1/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#2D2010';this.style.display='none'" />
+              <img src="https://img.youtube.com/vi/VIDEO_ID_1/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#002F6C';this.style.display='none'" />
               <div class="play-btn"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
             </div>
             <div class="p-4">
-              <p class="font-semibold text-sm text-dark">Student Name 1</p>
-              <p class="text-xs mt-0.5" style="color:#6B5B45">College of Business &middot; Junior</p>
-              <p class="text-sm mt-2 leading-snug text-dark">One-line description of their idea.</p>
+              <p class="font-semibold text-sm text-blue">Student Name 1</p>
+              <p class="text-xs mt-0.5" style="color:#B6ADA5">College of Business &middot; Junior</p>
+              <p class="text-sm mt-2 leading-snug" style="color:#333F48">One-line description of their idea.</p>
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #E8DDD0">
+          <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #DDD8D2">
             <div class="video-thumb" onclick="openVideo('VIDEO_ID_2','Student Name 2')">
-              <img src="https://img.youtube.com/vi/VIDEO_ID_2/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#2D2010';this.style.display='none'" />
+              <img src="https://img.youtube.com/vi/VIDEO_ID_2/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#002F6C';this.style.display='none'" />
               <div class="play-btn"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
             </div>
             <div class="p-4">
-              <p class="font-semibold text-sm text-dark">Student Name 2</p>
-              <p class="text-xs mt-0.5" style="color:#6B5B45">College of Engineering &middot; Senior</p>
-              <p class="text-sm mt-2 leading-snug text-dark">One-line description of their idea.</p>
+              <p class="font-semibold text-sm text-blue">Student Name 2</p>
+              <p class="text-xs mt-0.5" style="color:#B6ADA5">College of Engineering &middot; Senior</p>
+              <p class="text-sm mt-2 leading-snug" style="color:#333F48">One-line description of their idea.</p>
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #E8DDD0">
+          <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #DDD8D2">
             <div class="video-thumb" onclick="openVideo('VIDEO_ID_3','Student Name 3')">
-              <img src="https://img.youtube.com/vi/VIDEO_ID_3/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#2D2010';this.style.display='none'" />
+              <img src="https://img.youtube.com/vi/VIDEO_ID_3/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#002F6C';this.style.display='none'" />
               <div class="play-btn"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
             </div>
             <div class="p-4">
-              <p class="font-semibold text-sm text-dark">Student Name 3</p>
-              <p class="text-xs mt-0.5" style="color:#6B5B45">Health Science Center &middot; Sophomore</p>
-              <p class="text-sm mt-2 leading-snug text-dark">One-line description of their idea.</p>
+              <p class="font-semibold text-sm text-blue">Student Name 3</p>
+              <p class="text-xs mt-0.5" style="color:#B6ADA5">Health Science Center &middot; Sophomore</p>
+              <p class="text-sm mt-2 leading-snug" style="color:#333F48">One-line description of their idea.</p>
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #E8DDD0">
+          <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow" style="border:1px solid #DDD8D2">
             <div class="video-thumb" onclick="openVideo('VIDEO_ID_4','Student Name 4')">
-              <img src="https://img.youtube.com/vi/VIDEO_ID_4/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#2D2010';this.style.display='none'" />
+              <img src="https://img.youtube.com/vi/VIDEO_ID_4/mqdefault.jpg" alt="Pitch thumbnail" onerror="this.parentElement.style.background='#002F6C';this.style.display='none'" />
               <div class="play-btn"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
             </div>
             <div class="p-4">
-              <p class="font-semibold text-sm text-dark">Student Name 4</p>
-              <p class="text-xs mt-0.5" style="color:#6B5B45">Liberal Arts &middot; Senior</p>
-              <p class="text-sm mt-2 leading-snug text-dark">One-line description of their idea.</p>
+              <p class="font-semibold text-sm text-blue">Student Name 4</p>
+              <p class="text-xs mt-0.5" style="color:#B6ADA5">Liberal Arts &middot; Senior</p>
+              <p class="text-sm mt-2 leading-snug" style="color:#333F48">One-line description of their idea.</p>
             </div>
           </div>
 
         </div>
         <div class="mt-8 text-center">
-          <a href="./vote.html" class="cta-btn">
+          <a href="./vote.html" class="cta-btn" style="font-size:15px;padding:13px 28px">
             See all pitches &amp; vote
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
@@ -244,54 +248,54 @@
     <section id="prizes" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <span class="sec-tag">Prizes</span>
-        <h2 class="display font-bold text-dark mb-12" style="font-size:clamp(32px,5vw,52px);letter-spacing:-0.01em">Your vote decides who wins.</h2>
-        <div class="grid grid-cols-3 gap-4 sm:gap-6 max-w-xl">
-          <div class="prize-card">
-            <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color:#6B5B45">1st place</p>
-            <p class="prize-amount">$100</p>
-            <div class="mt-3 w-8 h-1 rounded mx-auto" style="background:#E87722"></div>
+        <h2 class="serif font-bold text-blue mb-12" style="font-size:clamp(30px,5vw,48px);letter-spacing:-0.01em">Your vote decides who wins.</h2>
+        <div class="grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
+          <div class="prize-card prize-card--first">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-3" style="color:#B6ADA5">1st place</p>
+            <p class="prize-amount">$150</p>
+            <div class="mt-3 w-10 h-1 rounded mx-auto" style="background:#CB6015"></div>
           </div>
-          <div class="prize-card">
-            <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color:#6B5B45">2nd place</p>
-            <p class="prize-amount" style="font-size:40px;padding-top:6px">$50</p>
-            <div class="mt-3 w-8 h-1 rounded mx-auto" style="background:#E8DDD0"></div>
+          <div class="prize-card" style="border-top:4px solid #002F6C">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-3" style="color:#B6ADA5">2nd place</p>
+            <p class="prize-amount" style="font-size:44px;padding-top:4px">$100</p>
+            <div class="mt-3 w-10 h-1 rounded mx-auto" style="background:#002F6C"></div>
           </div>
-          <div class="prize-card">
-            <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color:#6B5B45">3rd place</p>
-            <p class="prize-amount" style="font-size:32px;padding-top:10px">$25</p>
-            <div class="mt-3 w-8 h-1 rounded mx-auto" style="background:#E8DDD0"></div>
+          <div class="prize-card" style="border-top:4px solid #B9D9EB">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-3" style="color:#B6ADA5">3rd place</p>
+            <p class="prize-amount" style="font-size:36px;padding-top:8px">$75</p>
+            <div class="mt-3 w-10 h-1 rounded mx-auto" style="background:#B9D9EB"></div>
           </div>
         </div>
-        <p class="text-sm mt-6 max-w-md" style="color:#6B5B45">Winners are determined by weighted peer vote scores. The ETX Launchpad team reserves the right to use an internal review panel to resolve ties.</p>
+        <p class="text-sm mt-6 max-w-md" style="color:#B6ADA5">Winners are determined by weighted peer vote scores. The ETX Launchpad team reserves the right to use an internal review panel to resolve ties.</p>
       </div>
     </section>
 
     <!-- CTA BAND -->
     <section class="hero-bg py-16 sm:py-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="display text-white font-extrabold mb-4" style="font-size:clamp(36px,6vw,64px);letter-spacing:-0.01em">
-          Voting closes <span style="color:#E87722">October 26.</span>
+        <h2 class="serif text-white font-bold mb-4" style="font-size:clamp(32px,5vw,58px);letter-spacing:-0.01em">
+          Voting closes <span style="color:#CB6015">October 26.</span>
         </h2>
-        <p class="text-lg mb-8" style="color:rgba(255,255,255,0.6)">Sign in with your UT Tyler Google account &mdash; takes less than a minute.</p>
-        <a href="./vote.html" class="cta-btn" style="font-size:18px;padding:16px 40px">Vote now &rarr;</a>
+        <p class="text-lg mb-8" style="color:rgba(185,217,235,0.75)">Sign in with your UT Tyler Google account &mdash; takes less than a minute.</p>
+        <a href="./vote.html" class="cta-btn" style="font-size:17px;padding:15px 36px">Vote now &rarr;</a>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer style="background:#1A1206" class="py-10">
+    <footer style="background:#002F6C;border-top:3px solid #CB6015" class="py-10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#E87722">
-            <span class="display text-white text-sm font-bold">ETX</span>
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#CB6015">
+            <span class="text-white text-xs font-bold" style="font-family:'Arimo',sans-serif">UTT</span>
           </div>
           <div>
             <p class="text-white font-semibold text-sm">ETX Launchpad</p>
-            <p class="text-xs" style="color:rgba(255,255,255,0.35)">University of Texas at Tyler</p>
+            <p class="text-xs" style="color:rgba(185,217,235,0.5)">University of Texas at Tyler</p>
           </div>
         </div>
         <div class="flex flex-col sm:items-end gap-1">
-          <a href="mailto:etxlp@uttyler.edu" class="text-sm transition-colors" style="color:rgba(255,255,255,0.5)" onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">etxlp@uttyler.edu</a>
-          <p class="text-xs" style="color:rgba(255,255,255,0.3)">College of Business &middot; COB 223 &middot; 903.565.6459</p>
+          <a href="mailto:etxlp@uttyler.edu" class="text-sm transition-colors" style="color:rgba(185,217,235,0.6)" onmouseover="this.style.color='#CB6015'" onmouseout="this.style.color='rgba(185,217,235,0.6)'">etxlp@uttyler.edu</a>
+          <p class="text-xs" style="color:rgba(185,217,235,0.35)">Soules College of Business &middot; COB 223 &middot; 903.565.6459</p>
         </div>
       </div>
     </footer>
@@ -305,9 +309,9 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen style="display:block"></iframe>
         </div>
-        <div class="p-4 flex items-center justify-between gap-4 flex-wrap">
+        <div class="p-4 flex items-center justify-between gap-4 flex-wrap" style="background:#001E47">
           <p id="modalTitle" class="text-white font-semibold text-sm"></p>
-          <a href="./vote.html" class="cta-btn" style="padding:8px 20px;font-size:13px;white-space:nowrap">Vote for this pitch &rarr;</a>
+          <a href="./vote.html" class="cta-btn" style="padding:8px 18px;font-size:13px;white-space:nowrap">Vote for this pitch &rarr;</a>
         </div>
       </div>
     </div>
@@ -333,7 +337,7 @@
       const diff = Math.ceil((CLOSE_DATE - new Date()) / 86400000);
       document.getElementById('days-left').textContent = diff > 0 ? diff : '0';
 
-      const GAS_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+      const GAS_URL = 'https://script.google.com/macros/s/AKfycbxAeZsbPk3GpY_7fNpua56ewy1F6MaXLyNosTzAe3LhcIy3aqLrqAX_9b7Y8FceDepP/exec';
       fetch(GAS_URL + '?action=getPitches')
         .then(r => r.json())
         .then(d => { document.getElementById('pitch-count').textContent = (d.pitches||[]).length || '&mdash;'; })
