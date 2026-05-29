@@ -119,7 +119,7 @@
             </div>
             <div class="divider"></div>
             <div>
-              <p class="serif font-bold text-4xl" style="color:#CB6015" id="pitch-count">&mdash;</p>
+              <p class="serif font-bold text-4xl" style="color:#CB6015" id="pitch-count">—</p>
               <p class="text-sm" style="color:rgba(185,217,235,0.6)">ideas submitted</p>
             </div>
             <div class="divider"></div>
@@ -129,7 +129,7 @@
             </div>
             <div class="divider"></div>
             <div>
-              <p class="serif font-bold text-4xl" style="color:#CB6015" id="days-left">&mdash;</p>
+              <p class="serif font-bold text-4xl" style="color:#CB6015" id="days-left">—</p>
               <p class="text-sm" style="color:rgba(185,217,235,0.6)">days to vote</p>
             </div>
           </div>
@@ -328,7 +328,7 @@
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxAeZsbPk3GpY_7fNpua56ewy1F6MaXLyNosTzAe3LhcIy3aqLrqAX_9b7Y8FceDepP/exec';
       fetch(GAS_URL + '?action=getPitches')
         .then(r => r.json())
-        .then(d => { document.getElementById('pitch-count').textContent = (d.pitches||[]).length || '&mdash;'; })
+        .then(d => { document.getElementById('pitch-count').textContent = (d.pitches||[]).length || '—'; })
         .catch(() => {});
 
       document.querySelectorAll('a[href^="#"]').forEach(a => {
